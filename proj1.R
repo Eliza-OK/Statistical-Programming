@@ -8,7 +8,7 @@
 ## Question 1-3
 ## change the current working directory and read the file
 
-setwd("F:/ED-semaster1/stastistical programming/group1") ## comment it
+## setwd("F:/ED-semaster1/stastistical programming/group1") ## comment it
 a <- scan("4300-0.txt",what="character",skip=73,nlines=32858-73)
 a <- gsub("_(","",a,fixed=TRUE) ## remove "_("
 
@@ -92,6 +92,7 @@ simulate_text <- function(T,P,a,num_words_to_generate){
       next_word_idx <- sample(sub_matrix[, 3], 1)
     }else{
       sub_matrix_P <- P[P[, 1] == start_word2, ]
+      # check if the sub-matrix of P has row
       if ((nrow(sub_matrix_P)>0) && !is.null(nrow(sub_matrix_P))){
         next_word_idx <- sample(sub_matrix_P[, 2], 1)
       }else{
@@ -100,7 +101,7 @@ simulate_text <- function(T,P,a,num_words_to_generate){
     }
     
     # Add next word to generated text
-    # generated_text <- c(generated_text, b[next_word_idx])
+    # Print the generated text with capitalizing the first letter of every sentence. 
     if (i == 1 || generated_text[length(generated_text)] == "." || generated_text[length(generated_text)] == "?" || generated_text[length(generated_text)] == "!"){
       generated_text <- c(generated_text, paste0(toupper(substring(b[next_word_idx], 1, 1)), substring(b[next_word_idx], 2)) )
     }else{
@@ -152,7 +153,8 @@ generated_text_b <- simulate_text_only_b(b, num_words_to_generate)
 cat(generated_text_b, sep = " ")
 
 ## Question 10 
-
+## create a modified version of b, called "b_print". We match the lowercase word and the word starts with a capital letter with the main text and count them seperately. 
+## Then, make a comparison. If the word is the most often start with a capital letter in the main text, replace the lowercase word in b. 
 b_print <- character(0)
 for (word in b){
   uppercase_word <- paste0(toupper(substr(word, 1, 1)), substring(word, 2))
