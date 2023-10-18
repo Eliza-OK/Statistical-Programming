@@ -79,6 +79,10 @@ qsim <- function(mf,mb,a.rate,trb,trf,tmb,tmf,maxb,time=7200,stop_queue=1800){
       finished_index <- which(British_time <= 0)
       british_ini_index <- intersect(queueed_index, finished_index)
       British_queue[british_ini_index] <- British_queue[british_ini_index] - 1
+
+      ## Set new processing times for British queues with cars left after previous car has left
+      british_ini_ind <- intersect(intersect(which(British_time <= 0), which(British_queue > 0)),british_ini_index)
+      British_time[british_ini_ind] <- runif(length(british_ini_ind), min = tmb, max = tmb+trb)
       
     }
     
