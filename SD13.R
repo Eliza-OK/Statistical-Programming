@@ -1,3 +1,12 @@
+## Maxmillan Ries - S2585467 Wanying Liang -S2503745 Kexin Yan -S2520957
+## Due to the difficulty of splitting statistical programming code amongst different people, 
+## we opted to do the assignment more or less individually (helping each other when stuck, such as making split_punct more efficient),
+## and combinig our solutions at the end, making sure we all learnt and understood what was required. 
+## To do this, we sat in several Teams calls and shared our screen in a form of pair-programming.
+## Since we all did the full assignment separately, we roughly had equal contributions.
+
+
+## Construct a function to simulate cars passing through French passport control and British passport control at a French ferry terminal.
 qsim <- function(mf,mb,a.rate,trb,trf,tmb,tmf,maxb,time=7200,stop_queue=1800){
   ## Time and stop_queue is set as a default value to limited the interest within 2 hour and defined that check-in closes 30 minutes before departure. 
   
