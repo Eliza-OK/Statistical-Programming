@@ -148,7 +148,7 @@ lines(eq2[seq(1,length(eq2),by=60)], col = "green", lwd = 2)
 title(main = "Expected Queuing Time, tmb = 40")
 
 
-## Estimate the probability of at least one car missing the ferry departure.
+## Estimate the probability of at least one car missing the ferry departure with mf=5,mb=5,a.rate=.1,trb=40,trf=40,tmb=30,tmf=30,maxb=20.
 car <- 0
 for (i in 1:100){
   return_list_missing <- qsim(mf=5,mb=5,a.rate=.1,trb=40,trf=40,tmb=30,tmf=30,maxb=20)
