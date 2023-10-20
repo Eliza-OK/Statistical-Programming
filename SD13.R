@@ -158,3 +158,4 @@ for (i in 1:100){
 }
 
 cat("The probability of at least one car missing the ferry departure is ", car, "%")
+## We found that there will be no missing car when tmb = 30. However, from the plot, we can inference there will be missing car when the tmb changed to 40.
